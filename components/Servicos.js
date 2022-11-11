@@ -1,16 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native';
-import Item from './Item';
-import ServicesMock from '../data/MockServicos';
+import Servico from './Servico';
+import ListaServicos from '../data/ListaServicos';
 
-export default function Servicos() {
+export default function Services() {
   return (
     <View style={styles.container}>
-      <View style={styles.textBorder}>
-        <Text style={styles.title}>Serviços Drone</Text>
+      <View>
+        <Text style={styles.titulo}>Opções Disponíveis</Text>
       </View>
-      <View style={styles.servicesGrid}>
-        <Item data={ServicesMock[0]}></Item>
-        <Item data={ServicesMock[1]}></Item>
+      <View style={styles.gridServicos}>
+        <Servico data={ListaServicos[0]}></Servico>
+        <Servico data={ListaServicos[1]}></Servico>
+        <Servico data={ListaServicos[2]}></Servico>
       </View>
     </View>
   );
@@ -21,36 +22,14 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingHorizontal: 10,
   },
-
-  title: {
-    textTransform: 'uppercase',
-    fontSize: 30,
+  titulo: {
+    fontSize: 24,
     textAlign: 'center',
-    color: '#FFF',
+    color: '#F1F1F1',
     fontWeight: '900',
     paddingBottom: 10,
   },
-
-  subtitle: {
-    textTransform: 'capitalize',
-    fontSize: 20,
-    textAlign: 'center',
-    color: '#F9F871',
-    fontWeight: '500',
-    paddingBottom: 10,
-  },
-
-  servicesGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-evenly',
+  gridServicos: {
     marginVertical: 10,
-  },
-
-  textBorder: {
-    marginHorizontal: 25,
-    borderRadius: 5,
-    borderBottomWidth: 1,
-    borderColor: '#00004F',
   },
 });
